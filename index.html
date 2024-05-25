@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="robots" content="noindex, nofollow, noodp, noydir" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
+		<title>UNACH Captive Portal</title>
+		<link href="images/logo_unach_glp.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/cpModal.min.css" rel="stylesheet">
+		<link href="css/custom.css" rel="stylesheet">
+
+		<script src="js/zone.js"></script>
+
+		<script src="js/jquery-1.11.2.min.js"></script>
+		<script src="js/css_browser_selector.js"></script>
+		<script src="js/cpModal.min.js"></script>
+		<script src="js/jquery.polyglot.language.switcher.js"></script>
+
+		<script>
+		function login()
+		{
+			var email = document.getElementById("inputEmail").value;
+			var pattern = /^[a-zA-Z0-9._%+-]+@unach\.mx$/;
+  
+			if (pattern.test(email))
+			{
+				alert("Le damos la bienvenida");
+				window.location.replace("https://www.unach.mx");
+			}
+			else
+			{
+				alert("Lo sentimos, para acceder debe disponer de un correo institucional.");
+				window.location.reload();
+			}
+		}
+		</script>
+	</head>
+	<body class="no-sidebar using-mouse">
+		<div id="particles-js"></div>
+		<div class="captiveportal">
+			<section class="t-element box-0 t-section t-section-content-middle t-section-boxed t-section-items-middle t-top-section">
+				<div class="t-container">
+					<div class="t-row">
+						<div class="t-element t-column t-col-100">
+							<div class="t-column-wrap t-element-populated">
+								<div class="t-widget-wrap">
+									<div class="t-element box-1 t-section-content-middle t-section-boxed t-section t-inner-section">
+										<div class="t-container t-column-gap-default">
+											<div class="t-row">
+												<div class="t-element box-2 t-column t-col-50 t-inner-column">
+													<div class="t-column-wrap t-element-populated">
+														<div class="t-widget-wrap">
+															<div class="t-element box-3 t-view-stacked t-shape-circle t-widget t-widget-icon">
+																<div class="t-widget-container">
+																	<div class="t-icon-wrapper">
+																		<div id="logo" class="t-icon"><img src="images/logo_unach_glp.png" width="100px" height="100px"/></div>
+																		<div class="t-widget-heading">
+																			<h2 id="cp_portal_head_title" class="t-heading-title t-size-default">Portal Captivo UNACH</h2>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="t-element box-5 t-widget t-widget-text-editor">
+																<div class="t-widget-container">
+																	<div class="t-text-editor t-clearfix">
+																		<p id="cp_portal_info1">Le damos la bienvenida.<br><br>Para conectarse a la red UNACH, por favor inicie sesi&oacute;n usando su correo y contrase&ntilde;a institucional.</p>
+																	</div>
+																</div>
+															</div>
+															<div class="t-element box-6 t-widget t-widget-spacer">
+																<div class="t-widget-container">
+																	<div class="t-spacer">
+																		<div id="cp_portal_cookies_note" class="t-spacer-inner"></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="t-element box-7 t-column t-col-50 t-inner-column">
+													<div class="t-column-wrap t-element-populated">
+														<div class="t-widget-wrap">
+															<div class="t-element box-8 t-button-align-stretch t-widget t-widget-login">
+																<div class="t-widget-container">
+																	<div class="t-form-fields-wrapper">
+																		<div id="polyglotLanguageSwitcher"></div>
+																		<form id="login_form" class="t-login t-form">
+																			<div id="fieldUsername" class="t-field-type-text t-field-group t-column t-col-100 t-field-required">
+																				<label id="username" for="inputUsername">Correo institucional</label>
+																				<input type="email" id="inputEmail" class="t-field t-field-textual t-size-sm" required autocomplete="off" autocapitalize="none">
+																			</div>
+																			<div id="fieldPassword" class="t-field-type-text t-field-group t-column t-col-100 t-field-required">
+																				<label id="userpass" for="inputPassword">Contrase&ntilde;a</label>
+																				<input type="password" id="inputPassword" class="t-field t-field-textual t-size-sm" required>
+																			</div>
+																			<div class="t-field-type-checkbox t-field-group t-column t-col-100 t-rules-checkbox">
+																				<label for="t-login-rules">
+																					<input type="checkbox" id="t-login-rules" name="rules"><span></span>
+																					<span class="text"><span id="termcondition1"></span>Acepto los t&eacute;rminos y condiciones<span id="rules" class="link"></span> <span id="termcondition2"></span></span>
+																				</label>
+																			</div>
+																			<div id="signin-box" class="t-field-group t-column t-field-type-submit t-col-100">
+																				<button class="t-size-md t-button" id="signin" type="button" onclick="login()">Conectarse</button>
+																			</div>
+																			<div class="t-field-group t-column t-col-100 interface-config">
+																				<p class="flex-100"><span id="cp_portal_if_config"></span>
+																				<p><span id="cp_portal_if_config_ip" class="if-title"></span><span id="ipAddress" class="ip-address"></span>
+																			</div>
+																		</form>
+																	</div>
+
+																	<div id="logout_frm" class="t-form-fields-wrapper t-field-group hidden">
+																		<div id="status_info" class="t-widget-wrap">
+																			<div class="t-widget-heading">
+																				<h4 id="status" class="t-heading-title"></h4>
+																			</div>
+																			<div class="t-field-group t-column t-col-100 interface-config">
+																				<p><span id="cp_portal_log_ip" class="if-title"></span> <span id="connected_ipAddress" class="ip-address"></span>
+																				<p><span id="cp_portal_log_mac" class="if-title"></span> <span id="connected_macAddress" class="mac-address"></span>
+																			</div>
+																			<p id="status_pretext1" class="pretext">
+																			<p id="status_pretext2" class="pretext">
+																		</div>
+																		<div class="t-widget-wrap">
+																			<form class="t-column t-col-100">
+																				<div class="t-field-group t-column t-field-type-submit t-col-100">
+																					<button class="t-size-md t-button" id="logoff" type="button"></button>
+																				</div>
+																			</form>
+																		</div>
+																	</div>
+
+																	<div id="login_none" class="t-form-fields-wrapper t-field-group hidden">
+																		<div id="anon_info" class="t-widget-wrap">
+																			<div class="t-widget-heading">
+																				<h4 id="anon_title" class="t-heading-title"></h4>
+																			</div>
+																			<p id="anon_pretext1" class="pretext">
+																			<p id="anon_pretext2" class="pretext">
+																		</div>
+																		<div class="t-field-type-checkbox t-field-group t-column t-col-100 t-rules-checkbox">
+																			<label for="t-login-rules-anon">
+																				<input type="checkbox" id="t-login-rules-anon" name="rules"><span></span>
+																				<span class="text"><span id="termcondition_anon1"></span> <span id="rules_anon" class="link"></span> <span id="termcondition_anon2"></span></span>
+																			</label>
+																		</div>
+																		<form class="t-column t-col-100">
+																			<div class="t-field-group t-column t-field-type-submit t-col-100">
+																				<button class="t-size-md t-button" id="signin_anon" type="button"></button>
+																			</div>
+																		</form>
+																		<div class="t-field-group t-column t-col-100"></div>
+																		<div class="t-field-group t-column t-col-100 interface-config">
+																			<p class="flex-100"><span id="cp_portal_if_anon_config"></span>
+																			<p><span id="cp_portal_if_anon_ip" class="if-title"></span> <span id="anon_ipAddress" class="ip-address"></span>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<script src="js/particles.min.js"></script>
+		<script src="js/particles-settings.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
